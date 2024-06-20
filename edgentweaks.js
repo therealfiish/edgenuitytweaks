@@ -618,5 +618,5 @@ function loop() {
     }
     playVideo()
 }
-window.masterloop = setInterval(loop, 1000);
+window.masterloop = setInterval(loop, 5000);
 }, 2000); //makes this run after 2 seconds
