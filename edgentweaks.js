@@ -437,11 +437,19 @@ try {
 
 
 
+//unpauses the video if its paused
+function playVideo(){
+    var playButton = window.frames[0].document.getElementById("uid1_play");
+    if(playButton != undefined){
+         setTimeout(function(){if(playButton.className == "play"){playButton.children[0].click();}},1000);
+    }
+}
+
+
 // Auto Advance
 
-// var temp = eval(x = $("#stageFrame").contents().find("#uid1_time").text().replace(/:/g,".").replace("/", '-')); ///e.g. 1:20 / 2:00 -> 1.20 - 2.00 = abs seconds left
-
 function autoadvance() {
+
 
     //checks if its an assignment/instruction
     if (["Unit Test", "Unit Test Review", "Quiz"].includes(x = $("#activity-title").text()) && ($("#activity-status").text() != "Complete")) {
@@ -454,16 +462,11 @@ function autoadvance() {
 
     if (temp >= -0.6) {
         $("#stageFrame").contents().find(".FrameRight").click()
-        temp = 1000
     }
-
-    if ($("#aaASubmit").is(":checked")) {
-        $(".footnav.goRight").click()
-    }
- 
-    $(".footnav.goRight").click()
 
     //All other AA checks have succedded at this point.
+ 
+    $(".footnav.goRight").click()
 
     output += ("Autoadvance, ")
 }
@@ -499,33 +502,36 @@ function skipIntro() {
 }
 // Guess Practice
 function GuessPractice() {
-    var yeah = 1;
+    var looper;
     //Guesser (THIS IS INDEDED TO BE RESTRICTIVE, JUST LEAVE IT.)
     if (["Instruction", "Warm-Up", "Summary", "Lecture"].includes(document.getElementById("activity-title").innerText)) {
          var numOption
          if ($("iframe#stageFrame").contents().find("form").find(".answer-choice-button").length = numOption > 0) {
             $("iframe#stageFrame").contents().find("form").find(".answer-choice-button")[Math.floor(Math.random() * Math.floor(numOption))].click()
-            yeah = 2;
+            
 
             $("#stageFrame").contents().find("#btnCheck")[0].click()
-            if (yeah = 2) {
-            yeah = 1;
             $("#stageFrame").contents().find(".FrameRight").click()
-         }
 
          } else if ($("#stageFrame").contents().find("iframe").contents().find(".answer-choice-button").length > 0) {
+
             $("#stageFrame").contents().find("iframe").contents().find(".answer-choice-button")[Math.floor(Math.random() * Math.floor(4))].click()
-            yeah = 2;
-
             $("#stageFrame").contents().find("#btnCheck")[0].click()
-            if (yeah = 2) {
-               yeah = 1;
-               $("#stageFrame").contents().find(".FrameRight").click()
-            }
-         
-         } else if ($("#stageFrame").contents().find("iframe").contents().find("sbgTile"))
+            $("#stageFrame").contents().find(".FrameRight").click()
+         }
+        //doesnt work as intended, ill fix it later    
+        //  } else /*if (($('body').find('div.content').find('div').find('div:nth-child(1)').find('div').find('div.sbgColumn.leftColumn.sbg2Cat').children().length) > 0) */ {
+        //     $("#stageFrame").contents().find("#btnCheck")[0].click()
+        //     $("#stageFrame").contents().find(".FrameRight").click()
+        //  }
 
-         
+        //lazy fix (WILL MAKE INSTRUCTION REALLY SLOWER TO COMPLETE!!!!)
+        else {
+            if (looper%40 == 0) {
+                $("#stageFrame").contents().find("#btnCheck")[0].click()
+                $("#stageFrame").contents().find(".FrameRight").click()
+            } 
+        }
          output += ("Guess practice tried to click, ")
     } else {
         output += ("Guess Practice (not supported for  " + $("#activity-title").text() + "), ")
@@ -610,6 +616,7 @@ function loop() {
     if ($("#userconsole code:first").text() != output) {
         $("#userconsole").prepend("<br><code>" + output)
     }
+    playVideo()
 }
-window.masterloop = setInterval(loop, 4000);
-}, 4000); //makes this run after 2 seconds
+window.masterloop = setInterval(loop, 1000);
+}, 2000); //makes this run after 2 seconds
