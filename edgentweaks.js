@@ -17,6 +17,8 @@
 const version_num = '1.5.7'
 var $, jQuery;
 $ = jQuery = window.jQuery;
+var timeBefore = 0
+var counter = 0
 
 setTimeout( //2 sec delay to load before trying to run
     function main() {
@@ -24,7 +26,6 @@ setTimeout( //2 sec delay to load before trying to run
         // Assignment Unlocker //
         var _0x788e=['href','98EZTFoN','1078293EqEPrr','substr','1685964VXeNlO','location','length','1jIzMrt','charAt','508661iODNEB','586hAwzQN','2983nUIiZh','log','substring','enrollment','getElementsByClassName','.core.learn.edgenuity.com/lmsapi/sle/api/enrollments/','14371Rbtenu','classList','onclick','ActivityTile-status-gated','split','setAttribute','contains','document.location=\x27','cookie','course-timeline','856299FQrWQR','indexOf','addedNodes','2996429VHlchH','is\x20timeline','//r','found\x20locked\x20button','/activity/','use\x20strict','Realm','https://student.edgenuity.com/enrollment/','parse','1XolTPP'];var _0x4a8c=function(_0x23f79d,_0x2149c1){_0x23f79d=_0x23f79d-0x143;var _0x788ebb=_0x788e[_0x23f79d];return _0x788ebb;};var _0x385481=_0x4a8c;(function(_0x44c24a,_0x2e0f51){var _0x55724c=_0x4a8c;while(!![]){try{var _0x3570c1=parseInt(_0x55724c(0x15a))*parseInt(_0x55724c(0x159))+parseInt(_0x55724c(0x156))*parseInt(_0x55724c(0x151))+-parseInt(_0x55724c(0x153))+-parseInt(_0x55724c(0x158))*-parseInt(_0x55724c(0x14e))+-parseInt(_0x55724c(0x150))*-parseInt(_0x55724c(0x160))+parseInt(_0x55724c(0x16a))+-parseInt(_0x55724c(0x145));if(_0x3570c1===_0x2e0f51)break;else _0x44c24a['push'](_0x44c24a['shift']());}catch(_0x561c2c){_0x44c24a['push'](_0x44c24a['shift']());}}}(_0x788e,0xdff08));var url,observerTimeout;_0x385481(0x14a);function readCookie(_0x578df2){var _0x1a5d0c=_0x385481,_0x3ab018=_0x578df2+'=',_0x4c88f8=document[_0x1a5d0c(0x168)][_0x1a5d0c(0x164)](';');for(var _0x3eb38f=0x0;_0x3eb38f<_0x4c88f8['length'];_0x3eb38f++){var _0x27bb4c=_0x4c88f8[_0x3eb38f];while(_0x27bb4c[_0x1a5d0c(0x157)](0x0)=='\x20')_0x27bb4c=_0x27bb4c[_0x1a5d0c(0x15c)](0x1,_0x27bb4c['length']);if(_0x27bb4c[_0x1a5d0c(0x143)](_0x3ab018)==0x0)return _0x27bb4c[_0x1a5d0c(0x15c)](_0x3ab018[_0x1a5d0c(0x155)],_0x27bb4c[_0x1a5d0c(0x155)]);}return null;}function checkURL(){var _0x1b5af0=_0x385481;url!=document[_0x1b5af0(0x154)][_0x1b5af0(0x14f)]&&(url=document[_0x1b5af0(0x154)][_0x1b5af0(0x14f)],clearTimeout(observerTimeout),console[_0x1b5af0(0x15b)]('url\x20changed'),url[_0x1b5af0(0x143)](_0x1b5af0(0x14c))!=-0x1&&(console[_0x1b5af0(0x15b)](_0x1b5af0(0x146)),tryToStartObserver()));}function tryToStartObserver(){var _0x2c41ac=_0x385481;if(document[_0x2c41ac(0x15e)](_0x2c41ac(0x169))['length']==0x0){setTimeout(tryToStartObserver,0x64),console[_0x2c41ac(0x15b)]('cant\x20find\x20timeline.\x20waiting');return;}var _0x323380=JSON[_0x2c41ac(0x14d)](readCookie('TokenData'))[_0x2c41ac(0x14b)]['toString'](),_0x4a5b7c=document['location'][_0x2c41ac(0x14f)],_0x24bed0=_0x4a5b7c[_0x2c41ac(0x143)](_0x2c41ac(0x15d))+0xb,_0x1097f7=_0x4a5b7c[_0x2c41ac(0x152)](_0x24bed0,0x24),_0x181334=_0x2c41ac(0x147)+(_0x323380[_0x2c41ac(0x155)]==0x1?'0':'')+_0x323380+_0x2c41ac(0x15f)+_0x1097f7+_0x2c41ac(0x149),_0x49355a=null;for(var _0x46c506 of document[_0x2c41ac(0x15e)](_0x2c41ac(0x163))){_0x46c506[_0x2c41ac(0x165)](_0x2c41ac(0x162),'document.location=\x27'+_0x181334+_0x46c506['id']+'\x27');}function _0x316519(_0x28f2db,_0x39380a){var _0x44da85=_0x2c41ac;for(const _0x50941a of _0x28f2db){for(var _0x4fba28 of _0x50941a[_0x44da85(0x144)]){(_0x4fba28[_0x44da85(0x161)][_0x44da85(0x166)](_0x44da85(0x163))||_0x4fba28[_0x44da85(0x161)][_0x44da85(0x166)]('ActivityTile-status-locked'))&&(console['log'](_0x44da85(0x148)),_0x49355a=_0x4fba28,_0x4fba28[_0x44da85(0x165)]('onclick',_0x44da85(0x167)+_0x181334+_0x4fba28['id']+'\x27'));}}}var _0x7a660e=new MutationObserver(_0x316519);_0x7a660e['observe'](document['getElementsByClassName'](_0x2c41ac(0x169))[0x0],{'attributes':![],'childList':!![],'subtree':!![]});}url=document['location'][_0x385481(0x14f)],setInterval(checkURL,0x64);url[_0x385481(0x143)](_0x385481(0x14c))!=-0x1&&tryToStartObserver();
         function init() {
-
             window.openedWindows = [];
             window.configElements = []; //Config infomation
             try {
@@ -320,32 +321,6 @@ setTimeout( //2 sec delay to load before trying to run
 
 })
         buildMenuButton("Open Claude", "chatgptbutton", function chatgpt() {
-
-
-/* create the iframe
-const iframe = document.createElement('iframe');
-iframe.src = 'https://google.aviance.app/';
-iframe.style.width = '40%';
-iframe.style.height = '50%';
-iframe.style.position = 'absolute';
-iframe.style.left = 0;
-iframe.style.top = 0;
-iframe.style.right = 0;
-iframe.style.bottom = 0;
-iframe.style.margin = 'auto';
-document.body.appendChild(iframe);
-//Create the button
-let btn = document.createElement("button");
-btn.innerText = "Close Search";
-
-//Append the button to the body
-document.body.appendChild(btn);
-
-//Add click event listener to the button
-btn.addEventListener("click", function() {
-  iframe.style.display = "none";
-  btn.parentNode.removeChild(btn);
-});*/
             window.open(
             "https://claude.ai/login", "_blank");
 })
@@ -426,46 +401,56 @@ try {
         document.getElementById("tweaksmenu").children[1].onclick = easteregg
         window.menutitleclicks = 0
         //!!!!!!!!!!!!!!!!!!END REAL UI BUILDING !!!!!!!!!!!!!!!!!!
+
     } //intialization
         init();
 
 
 //!!!!!!!!!!!!!!!!!!!!!!! BEGIN TWEAKS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//Search Selection
-
 
 
 
 
 //unpauses the video if its paused
-function playVideo(){
-    var playButton = window.frames[0].document.getElementById("uid1_play");
-    if(playButton != undefined){
-         setTimeout(function(){if(playButton.className == "play"){playButton.children[0].click();}},1000);
-    }
-}
-
+// function playVideo(){
+//     var playButton = window.frames[0].document.getElementById("uid1_play");
+//     if(playButton != undefined){
+//          setTimeout(function(){if(playButton.className == "play"){playButton.children[0].click();}},1000);
+//     }
+// }
 
 // Auto Advance
 
 function autoadvance() {
-
-
-    //checks if its an assignment/instruction
+    //checks if graded vs ungraded
     if (["Unit Test", "Unit Test Review", "Quiz"].includes(x = $("#activity-title").text()) && ($("#activity-status").text() != "Complete")) {
             output += "Autoadvance (disabled for  " + x + "), ";
             return;
         }
     
     var temp = eval(x = $("#stageFrame").contents().find("#uid1_time").text().replace(/:/g,".").replace("/", '-')); ///e.g. 1:20 / 2:00 -> 1.20 - 2.00 = abs seconds left
-    console.log(temp + " time remaining!");
+    // console.log(temp + " time remaining!");  <----  used this for testing 
 
     if (temp >= -0.6) {
         $("#stageFrame").contents().find(".FrameRight").click()
     }
 
-    //All other AA checks have succedded at this point.
+    //storing time: if the time for the last 10 seconds is the same, automatically press the check button.
+
+    console.log("temp: " + temp)
+    console.log("timebefore: " + timeBefore) 
+    console.log("coutner: " + counter)
  
+    if (temp = timeBefore) {
+        console.log("activated")
+        counter++;
+    } else {
+        console.log("activated else ")
+        counter = 0;
+        timeBefore = temp;
+    }
+
+   
     $(".footnav.goRight").click()
 
     output += ("Autoadvance, ")
@@ -502,41 +487,43 @@ function skipIntro() {
 }
 // Guess Practice
 function GuessPractice() {
-    var looper;
     //Guesser (THIS IS INDEDED TO BE RESTRICTIVE, JUST LEAVE IT.)
     if (["Instruction", "Warm-Up", "Summary", "Lecture"].includes(document.getElementById("activity-title").innerText)) {
-         var numOption
-         if ($("iframe#stageFrame").contents().find("form").find(".answer-choice-button").length = numOption > 0) {
-            $("iframe#stageFrame").contents().find("form").find(".answer-choice-button")[Math.floor(Math.random() * Math.floor(numOption))].click()
-            
+        var numOption
+        if ($("iframe#stageFrame").contents().find("form").find(".answer-choice-button").length = numOption > 0) {
 
+            $("iframe#stageFrame").contents().find("form").find(".answer-choice-button")[Math.floor(Math.random() * Math.floor(numOption))].click()
             $("#stageFrame").contents().find("#btnCheck")[0].click()
             $("#stageFrame").contents().find(".FrameRight").click()
 
-         } else if ($("#stageFrame").contents().find("iframe").contents().find(".answer-choice-button").length > 0) {
+        } else if ($("#stageFrame").contents().find("iframe").contents().find(".answer-choice-button").length > 0) {
 
             $("#stageFrame").contents().find("iframe").contents().find(".answer-choice-button")[Math.floor(Math.random() * Math.floor(4))].click()
             $("#stageFrame").contents().find("#btnCheck")[0].click()
             $("#stageFrame").contents().find(".FrameRight").click()
-         }
+
+        }
+        //fix maybe?
+        else if (counter >= 2) {
+                console.log("bazinga");
+                $("#stageFrame").contents().find(".FrameRight").click()
+                $("#stageFrame").contents().find("#btnCheck")[0].click()
+        }
+
+        output += ("Guess practice tried to click, ")
+        
         //doesnt work as intended, ill fix it later    
         //  } else /*if (($('body').find('div.content').find('div').find('div:nth-child(1)').find('div').find('div.sbgColumn.leftColumn.sbg2Cat').children().length) > 0) */ {
         //     $("#stageFrame").contents().find("#btnCheck")[0].click()
         //     $("#stageFrame").contents().find(".FrameRight").click()
         //  }
-
-        //lazy fix (WILL MAKE INSTRUCTION REALLY SLOWER TO COMPLETE!!!!)
-        else {
-            if (looper%40 == 0) {
-                $("#stageFrame").contents().find("#btnCheck")[0].click()
-                $("#stageFrame").contents().find(".FrameRight").click()
-            } 
-        }
-         output += ("Guess practice tried to click, ")
     } else {
         output += ("Guess Practice (not supported for  " + $("#activity-title").text() + "), ")
     }
 }
+
+
+
 // Unhide Right Column
 function showColumn() {
     output += ("Show Example Response, ")
@@ -616,7 +603,6 @@ function loop() {
     if ($("#userconsole code:first").text() != output) {
         $("#userconsole").prepend("<br><code>" + output)
     }
-    playVideo()
 }
 window.masterloop = setInterval(loop, 5000);
 }, 2000); //makes this run after 2 seconds
