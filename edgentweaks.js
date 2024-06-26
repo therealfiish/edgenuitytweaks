@@ -437,15 +437,18 @@ function autoadvance() {
 
     //storing time: if the time for the last 10 seconds is the same, automatically press the check button.
 
-    console.log("temp: " + temp)
-    console.log("timebefore: " + timeBefore) 
-    console.log("coutner: " + counter)
+
+    //testing purposes
+
+    // console.log("temp: " + temp)
+    // console.log("timebefore: " + timeBefore) 
+    // console.log("coutner: " + counter)
  
     if (temp == timeBefore) {
-        console.log("activated")
+       // console.log("activated")
         counter++;
     } else {
-        console.log("activated else ")
+        // console.log("activated else ")
         counter = 0;
         timeBefore = temp;
     }
@@ -503,9 +506,10 @@ function GuessPractice() {
             $("#stageFrame").contents().find(".FrameRight").click()
 
         }
-        //fix maybe?
+
+        //lazy fix
         else if (counter >= 2) {
-                console.log("bazinga");
+                // console.log("bazinga");
                 $("#stageFrame").contents().find(".FrameRight").click()
                 $("#stageFrame").contents().find("#btnCheck")[0].click()
         }
@@ -517,6 +521,7 @@ function GuessPractice() {
         //     $("#stageFrame").contents().find("#btnCheck")[0].click()
         //     $("#stageFrame").contents().find(".FrameRight").click()
         //  }
+
     } else {
         output += ("Guess Practice (not supported for  " + $("#activity-title").text() + "), ")
     }
