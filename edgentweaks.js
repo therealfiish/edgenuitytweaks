@@ -1,9 +1,9 @@
 // ==UserScript==   
 // @name         EdgenTweaks
 // @namespace    https://github.com/de-y/edgentweaks
-// @version      1.5.7
+// @version      2
 // @description  Adds tweaks to edgenuity
-// @updateURL  https://raw.githubusercontent.com/De-y/edgentweaks/main/edgentweaks.js
+// @updateURL    https://raw.githubusercontent.com/De-y/edgentweaks/main/edgentweaks.js
 // @downloadURL  hthttps://raw.githubusercontent.com/De-y/edgentweaks/main/edgentweaks.js
 // @author       de-y, Gradyn & Syphon1205
 // @match        *://*.core.learn.edgenuity.com/*
@@ -11,7 +11,7 @@
 // @grant        none
 // ==/UserScript==
 
-// CURRENTLY DOING MAJOR REWORK
+// CURRENTLY DOING MAJOR REWORK!!!!
 
 
 const version_num = '1.5.7'
@@ -411,13 +411,13 @@ try {
 
 
 
-//unpauses the video if its paused
-// function playVideo(){
-//     var playButton = window.frames[0].document.getElementById("uid1_play");
-//     if(playButton != undefined){
-//          setTimeout(function(){if(playButton.className == "play"){playButton.children[0].click();}},1000);
-//     }
-// }
+// unpauses the video if its paused
+function playVideo(){
+    var playButton = window.frames[0].document.getElementById("uid1_play");
+    if(playButton != undefined){
+         setTimeout(function(){if(playButton.className == "play"){playButton.children[0].click();}},1000);
+    }
+}
 
 // Auto Advance
 
@@ -598,6 +598,7 @@ var output = "";
 
 function loop() {
     output = "Active Tweaks: ";
+    playVideo();
     StealthMode($("#HideButton").is(":checked"))
     if ($("#AutoCompleteVocabTickbox").is(":checked")) vocabCompleter()
     if ($("#AutoAdvance").is(":checked")) autoadvance()
