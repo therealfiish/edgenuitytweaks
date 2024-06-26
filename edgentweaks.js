@@ -1,4 +1,4 @@
-// ==UserScript==
+// ==UserScript==   
 // @name         EdgenTweaks
 // @namespace    https://github.com/de-y/edgentweaks
 // @version      1.5.7
@@ -424,9 +424,9 @@ try {
 function autoadvance() {
     //checks if graded vs ungraded
     if (["Unit Test", "Unit Test Review", "Quiz"].includes(x = $("#activity-title").text()) && ($("#activity-status").text() != "Complete")) {
-            output += "Autoadvance (disabled for  " + x + "), ";
-            return;
-        }
+        output += "Autoadvance (disabled for  " + x + "), ";
+        return;
+    }
     
     var temp = eval(x = $("#stageFrame").contents().find("#uid1_time").text().replace(/:/g,".").replace("/", '-')); ///e.g. 1:20 / 2:00 -> 1.20 - 2.00 = abs seconds left
     // console.log(temp + " time remaining!");  <----  used this for testing 
@@ -441,7 +441,7 @@ function autoadvance() {
     console.log("timebefore: " + timeBefore) 
     console.log("coutner: " + counter)
  
-    if (temp = timeBefore) {
+    if (temp == timeBefore) {
         console.log("activated")
         counter++;
     } else {
