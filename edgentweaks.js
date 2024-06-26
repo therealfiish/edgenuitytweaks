@@ -1,11 +1,11 @@
 // ==UserScript==   
 // @name         EdgenTweaks
-// @namespace    https://github.com/de-y/edgentweaks
+// @namespace    https://github.com/therealfiish/edgenuitytweaks
 // @version      2
-// @description  Adds tweaks to edgenuity
+// @description  Adds tweaks to edgenuity along with newest fix
 // @updateURL    https://raw.githubusercontent.com/De-y/edgentweaks/main/edgentweaks.js
 // @downloadURL  hthttps://raw.githubusercontent.com/De-y/edgentweaks/main/edgentweaks.js
-// @author       de-y, Gradyn & Syphon1205
+// @author       de-y, Gradyn & Syphon1205, therealfiish
 // @match        *://*.core.learn.edgenuity.com/*
 // @match        https://student.edgenuity.com/*
 // @grant        none
