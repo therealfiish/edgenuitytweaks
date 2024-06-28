@@ -1,7 +1,7 @@
-### STILL A WIP, but works enough. 
+# STILL A WIP, but works enough. 
 
-### EdgenuityTweaks V2
-# Originally created by @de-y, modified by me.
+# EdgenuityTweaks V2
+### Originally created by @de-y, modified by me.
 
 After using this script for the longest time, I was saddenned to see (like many others) that Edgenuity had taken action and modified their website to make this script ineffective. 
 
