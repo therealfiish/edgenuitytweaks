@@ -17,8 +17,7 @@
 const version_num = '1.5.7'
 var $, jQuery;
 $ = jQuery = window.jQuery;
-var timeBefore = 0
-var counter = 0
+var lowest = 0;
 
 setTimeout( //2 sec delay to load before trying to run
     function main() {
@@ -414,13 +413,19 @@ try {
 // unpauses the video if its paused
 function playVideo(){
     var playButton = window.frames[0].document.getElementById("uid1_play");
-    if(playButton != undefined){
-         setTimeout(function(){if(playButton.className == "play"){playButton.children[0].click();}},1000);
-    }
+    if(playButton !== undefined){
+        setTimeout(
+    function(){
+                if(playButton.className === "play"){
+                    playButton.children[0].click();
+                }
+            }
+        ,1000);
+        // console.log("Video unpaused");
+    } 
 }
 
 // Auto Advance
-
 function autoadvance() {
     //checks if graded vs ungraded
     if (["Unit Test", "Unit Test Review", "Quiz"].includes(x = $("#activity-title").text()) && ($("#activity-status").text() != "Complete")) {
@@ -431,29 +436,41 @@ function autoadvance() {
     var temp = eval(x = $("#stageFrame").contents().find("#uid1_time").text().replace(/:/g,".").replace("/", '-')); ///e.g. 1:20 / 2:00 -> 1.20 - 2.00 = abs seconds left
     // console.log(temp + " time remaining!");  <----  used this for testing 
 
+    //starts clicking next if there's a minute or less of video left
     if (temp >= -0.6) {
         $("#stageFrame").contents().find(".FrameRight").click()
+        console.log("clicked next")
     }
 
-    //storing time: if the time for the last 10 seconds is the same, automatically press the check button.
+    //checks if the time is less than 0.1 seconds, if so, clicks submit and next on the practice section
+    var time = $("#stageFrame").contents().find("#uid1_time").text()
+    var startTime = time.substring(0, time.indexOf("/") - 1).replace(/:/g,".")
+    if (startTime <= .2) {
+        $("#stageFrame").contents().find(".FrameRight").click()
+        $("#stageFrame").contents().find("#btnCheck")[0].click()
+        console.log("clicked submit and next")
+    }
 
-
-    //testing purposes
-
+    console.log("-----------------------------------------------")
+    // //testing purposes
     // console.log("temp: " + temp)
-    // console.log("timebefore: " + timeBefore) 
-    // console.log("coutner: " + counter)
- 
-    if (temp == timeBefore) {
-       // console.log("activated")
-        counter++;
-    } else {
-        // console.log("activated else ")
-        counter = 0;
-        timeBefore = temp;
-    }
+    // // console.log("time before: " + timeBefore)
+    // // console.log("counter: " + counter)
+    // console.log("------------------------------------------")
 
-   
+
+    // if the times the same 2x in a row, increment counter and click next
+    // DOESN'T WORK - time updates even when on practice screen
+    // if (temp === timeBefore) {
+    //    // console.log("activated")
+    //     counter++;
+    // } else {
+    //     // console.log("activated else ")
+    //     counter = 0;
+    //     timeBefore = temp;
+    // }
+
+
     $(".footnav.goRight").click()
 
     output += ("Autoadvance, ")
@@ -506,15 +523,13 @@ function GuessPractice() {
             $("#stageFrame").contents().find(".FrameRight").click()
 
         }
-
-        //lazy fix
-        else if (counter >= 2) {
-                // console.log("bazinga");
-                $("#stageFrame").contents().find(".FrameRight").click()
-                $("#stageFrame").contents().find("#btnCheck")[0].click()
+        else if (document.querySelector("#main > div > form > p:nth-child(2) > span:nth-child(2) > span") != null) { 
+            console.log("found multiple choice question");
+            $("#stageFrame").contents().find("#btnCheck")[0].click()
+            $("#stageFrame").contents().find(".FrameRight").click()
         }
 
-        output += ("Guess practice tried to click, ")
+       output += ("Guess practice tried to click, ")
         
         //doesnt work as intended, ill fix it later    
         //  } else /*if (($('body').find('div.content').find('div').find('div:nth-child(1)').find('div').find('div.sbgColumn.leftColumn.sbg2Cat').children().length) > 0) */ {
@@ -526,9 +541,6 @@ function GuessPractice() {
         output += ("Guess Practice (not supported for  " + $("#activity-title").text() + "), ")
     }
 }
-
-
-
 // Unhide Right Column
 function showColumn() {
     output += ("Show Example Response, ")
