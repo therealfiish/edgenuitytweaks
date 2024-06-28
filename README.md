@@ -10,7 +10,6 @@ However, with some modifications, the script is now working once again!
 ## Installation:
 1. Download the edgenuitytweaks.js file.
 2. Go to Tampermonkey -> Dashboard -> Utilties -> click on the button next to "import file" -> click the .js file -> install!
-NOTE: **AUTO UPDATE DOESN'T WORK AS OF NOW! CHECK THIS GITHUB PERIODICALLY FOR NEW UPDATES**
 
 ## License
 Licensed under a CC MIT license.
