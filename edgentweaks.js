@@ -432,14 +432,16 @@ function autoadvance() {
         output += "Autoadvance (disabled for  " + x + "), ";
         return;
     }
-    
+
+    $(".footnav.goRight").click()
+
     var temp = eval(x = $("#stageFrame").contents().find("#uid1_time").text().replace(/:/g,".").replace("/", '-')); ///e.g. 1:20 / 2:00 -> 1.20 - 2.00 = abs seconds left
     // console.log(temp + " time remaining!");  <----  used this for testing 
 
     //starts clicking next if there's a minute or less of video left
     if (temp >= -0.6) {
         $("#stageFrame").contents().find(".FrameRight").click()
-        console.log("clicked next")
+        // console.log("clicked next")
     }
 
     //checks if the time is less than 0.1 seconds, if so, clicks submit and next on the practice section
@@ -448,10 +450,10 @@ function autoadvance() {
     if (startTime <= .2) {
         $("#stageFrame").contents().find(".FrameRight").click()
         $("#stageFrame").contents().find("#btnCheck")[0].click()
-        console.log("clicked submit and next")
+        // console.log("clicked submit and next")
     }
 
-    console.log("-----------------------------------------------")
+    // console.log("-----------------------------------------------")
     // //testing purposes
     // console.log("temp: " + temp)
     // // console.log("time before: " + timeBefore)
@@ -471,7 +473,7 @@ function autoadvance() {
     // }
 
 
-    $(".footnav.goRight").click()
+
 
     output += ("Autoadvance, ")
 }
