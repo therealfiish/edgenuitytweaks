@@ -3,8 +3,8 @@
 // @namespace    https://github.com/therealfiish/edgenuitytweaks
 // @version      2
 // @description  Adds tweaks to edgenuity along with newest fix
-// @updateURL    https://raw.githubusercontent.com/De-y/edgentweaks/main/edgentweaks.js
-// @downloadURL  hthttps://raw.githubusercontent.com/De-y/edgentweaks/main/edgentweaks.js
+// @updateURL    https://raw.githubusercontent.com/therealfiish/edgenuitytweaks/main/edgentweaks.js
+// @downloadURL  https://raw.githubusercontent.com/therealfiish/edgenuitytweaks/main/edgentweaks.js
 // @author       de-y, Gradyn & Syphon1205, therealfiish
 // @match        *://*.core.learn.edgenuity.com/*
 // @match        https://student.edgenuity.com/*
